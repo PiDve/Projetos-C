@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #define GNUPLOT "gnuplot -persist"
   
-// gcc gnuplot_graph.c -o gnuplot_graph
+// gcc gnuplot_graph.c -o gnuplot_graph.exe -lm
 // ./gnuplot_graph 
 int main(int argc, char **argv)
 {
@@ -26,14 +26,15 @@ int main(int argc, char **argv)
             "Instale gnuplot'\n");
         exit(0);
     }
-    // fprintf(gp, "plot sin(x)\n");
-    fprintf(gpTempoXPosicaoDados01, "plot 'TempoXPosicaoDados01.txt'\n");
-    fprintf(gpTempoXVelocidadeDados01, "plot 'TempoXVelocidadeDados01.txt'\n");
-    fprintf(gpPosicaoXVelocidadeDados01, "plot 'PosicaoXVelocidadeDados01.txt'\n");
+
     
-    fprintf(gpTempoXPosicaoDados02, "plot 'TempoXPosicaoDados02.txt'\n");
-    fprintf(gpTempoXVelocidadeDados02, "plot 'TempoXVelocidadeDados02.txt'\n");
-    fprintf(gpPosicaoXVelocidadeDados02, "plot 'PosicaoXVelocidadeDados02.txt'\n");
+    fprintf(gpTempoXPosicaoDados01, "set output 'TempoXPosicaoDados01.pdf'\nset term pdf enhanced color\nset xlabel 'Tempo' font 'Arial, 16'\nset ylabel 'Posicao' font 'Arial, 19'\nset grid\nplot 'TempoXPosicaoDados01.txt' using 1:2 with lines linewidth 2\n");
+    fprintf(gpTempoXVelocidadeDados01, "set output 'TempoXVelocidadeDados01.pdf'\nset term pdf enhanced color\nset grid\nset xlabel 'Tempo' font 'Arial, 16'\nset ylabel 'Velocidade' font 'Arial, 19'\nplot 'TempoXVelocidadeDados01.txt' using 1:2 with lines linewidth 2\n");
+    fprintf(gpPosicaoXVelocidadeDados01, "set output 'PosicaoXVelocidadeDados01.pdf'\nset term pdf enhanced color\nset grid\nset xlabel 'Posicao' font 'Arial, 16'\nset ylabel 'Velocidade' font 'Arial, 19'\nset grid\nplot 'PosicaoXVelocidadeDados01.txt' using 1:2 with lines linewidth 2\n");
+    
+    fprintf(gpTempoXPosicaoDados02, "set output 'TempoXPosicaoDados02.pdf'\nset term pdf enhanced color\nset grid\nset xlabel 'Tempo' font 'Arial, 16'\nset ylabel 'Posicao' font 'Arial, 19'\nset grid\nplot 'TempoXPosicaoDados02.txt' using 1:2 with lines linewidth 2\n");
+    fprintf(gpTempoXVelocidadeDados02, "set output 'TempoXVelocidadeDados02.pdf'\nset term pdf enhanced color\nset grid\nset xlabel 'Tempo' font 'Arial, 16'\nset ylabel 'Velocidade' font 'Arial, 19'\nset grid\nplot 'TempoXVelocidadeDados02.txt' using 1:2 with lines linewidth 2\n");
+    fprintf(gpPosicaoXVelocidadeDados02, "set output 'PosicaoXVelocidadeDados02.pdf'\nset term pdf enhanced color\nset grid\nset xlabel 'Posicao' font 'Arial, 16'\nset ylabel 'Velocidade' font 'Arial, 19'\nset grid\nplot 'PosicaoXVelocidadeDados02.txt' using 1:2 with lines linewidth 2\n");
     
     fclose(gpTempoXPosicaoDados01);
     fclose(gpTempoXVelocidadeDados01);

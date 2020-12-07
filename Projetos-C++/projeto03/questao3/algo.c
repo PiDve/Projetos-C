@@ -39,8 +39,8 @@ int main() {
         return 0;
     }else{
         // printf("\nDados01\n");
-        while(fscanf(arqDados01, "%f %f %f", &VetTempoDados01[i], &VetPosicaoDados01[i], &VetVelocidadeDados01[i]) != EOF){
-            // printf("%.6f  %.6f  %.6f \n", VetTempoDados01[i], VetPosicaoDados01[i], VetVelocidadeDados01[i]);
+        while( !feof(arqDados01) ){
+            fscanf(arqDados01, "%f %f %f", &VetTempoDados01[i], &VetPosicaoDados01[i], &VetVelocidadeDados01[i]);
             somaPosicao01 += VetPosicaoDados01[i];
             somaVelocidade01 += VetVelocidadeDados01[i];
             i++;
@@ -49,12 +49,13 @@ int main() {
         mediaPosicao01 = somaPosicao01 / 401;
         mediaVelocidade01 = somaVelocidade01 / 401;   
         fprintf(result1, "Soma Velocidade: %.6f\t Soma Posicao: %.6f\t Media Posicao: %.6f\t Media Velocidade %.6f\n", somaPosicao01, somaVelocidade01, mediaPosicao01, mediaVelocidade01);
+        printf("Soma Velocidade: %.6f\t Soma Posicao: %.6f\t Media Posicao: %.6f\t Media Velocidade %.6f\n", somaPosicao01, somaVelocidade01, mediaPosicao01, mediaVelocidade01);
         
         i = 0;
         
         // printf("\nDados02\n");
-        while(fscanf(arqDados02, "%f %f %f", &VetTempoDados02[i], &VetPosicaoDados02[i], &VetVelocidadeDados02[i]) != EOF){
-            // printf("%.6f  %.6f  %.6f \n", VetTempoDados02[i], VetPosicaoDados02[i], VetVelocidadeDados02[i]);
+        while( !feof(arqDados02) ){
+            fscanf(arqDados02, "%f %f %f", &VetTempoDados02[i], &VetPosicaoDados02[i], &VetVelocidadeDados02[i]);
             somaPosicao02 += VetPosicaoDados02[i];
             somaVelocidade02 += VetVelocidadeDados02[i];
             i++;
@@ -63,6 +64,7 @@ int main() {
         mediaPosicao02 = somaPosicao02 / 401;
         mediaVelocidade02 = somaVelocidade02 / 401;   
         fprintf(result2, "Soma Velocidade: %.6f\t Soma Posicao: %.6f\t Media Posicao: %.6f\t Media Velocidade %.6f\n", somaPosicao02, somaVelocidade02, mediaPosicao02, mediaVelocidade02);
+        printf("Soma Velocidade: %.6f\t Soma Posicao: %.6f\t Media Posicao: %.6f\t Media Velocidade %.6f\n", somaPosicao02, somaVelocidade02, mediaPosicao02, mediaVelocidade02);
 
     }
     

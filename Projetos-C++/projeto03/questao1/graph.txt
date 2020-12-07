@@ -1,0 +1,8 @@
+reset
+set term pdf enhanced color
+set output 'ArquivoSaida.pdf
+set xrange[0:100]
+set yrange[-1.5:1.5]
+set xlabel 'Nome do Eixo X' font 'Arial, 16'
+set ylabel 'Nome do Eixo Y' font 'Arial, 19'
+plot 'TempoXPosicaoDados01.txt' using 1:2 withlines 

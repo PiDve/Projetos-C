@@ -72,5 +72,9 @@ int main() {
     fclose(arqPxVDados01);
     fclose(arqTxPDados01);
     fclose(arqTxVDados01);
+    fclose(arqPxVDados02);
+    fclose(arqTxPDados02);
+    fclose(arqTxVDados02);
+    
     return 0;
 }
